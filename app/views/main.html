@@ -1,23 +1,63 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+    <div style="height:500px; overflow: scrolloverflow">
+        <div class="text-left" ng-repeat="goal in goals">
+
+            <!-- <label class="alert alert-link" role="alert" ng-bind="goal.comment"></label> -->
+            <text ng-bind="goal.comment"></text>
+            <br />
+            <label class="text-muted" ng-bind="goal.name"></label>
+            
+            <br />
+            <br /><br />
+            
+            
+        </div>
+    </div>
 </div>
 
 <div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+    <textarea class="form-control" rows="3" ng-model='newGoal.comment'></textarea>
+    <br />
+    <div class="input-group col-xs-6" ng-hide="isNoComment()">
+        <span class="input-group-addon" id="sizing-addon3">@</span>
+        <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon3" ng-model="newGoal.name">
+    </div>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+    <br />
+    <div ng-hide="isNoComment() || isNoName()">
+        <label class="text-default">
+            Please select your age:
+        </label>
+        <br />
+        <div class="radio-inline">
+            <label>
+                <input type="radio" ng-model="newGoal.age" id="optionsRadios1" value="10~20">
+                10~20
+            </label>
+        </div>
+        <div class="radio-inline">
+            <label>
+                <input type="radio" ng-model="newGoal.age" id="optionsRadios2" value="20~30">
+                20~30
+            </label>
+        </div>
+        <div class="radio-inline">
+            <label>
+                <input type="radio" ng-model="newGoal.age" id="optionsRadios3" value="30~40">
+                30~40
+            </label>
+        </div>
+        <div class="radio-inline">
+            <label>
+                <input type="radio" ng-model="newGoal.age" id="optionsRadios4" value="40+">
+                40+
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="pull-right" >
+            <button ng-click="post(newGoal)" class="btn btn-default"  ng-hide="isNoAge() || isNoComment() || isNoName()">Post</button>
+        </div>
+    </div>
 </div>

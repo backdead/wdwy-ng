@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name wdwyNgApp.controller:MainCtrl
+ * @name wdwyNgApp.controller:AboutCtrl
  * @description
- * # MainCtrl
+ * # AboutCtrl
  * Controller of the wdwyNgApp
  */
-angular.module('wdwyNgApp')
-  .controller('MainCtrl', function ($scope) {
+angular.module('wdyw')
+  .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

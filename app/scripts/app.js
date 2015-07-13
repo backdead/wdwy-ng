@@ -9,13 +9,14 @@
  * Main module of the application.
  */
 angular
-  .module('wdwyNgApp', [
+  .module('wdyw', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
