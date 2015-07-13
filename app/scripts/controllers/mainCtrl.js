@@ -30,13 +30,16 @@ angular.module('wdyw')
       modalInstance.result.then(function() {
         $route.reload();
         //ApplicationNavigationService.transitionTo(ApplicationStates.HOME);
+        $scope.modalInstance.close();
       });
     };
     
     $scope.post = function(newGoal) {
         GoalService.createGoal(newGoal);
+        $route.reload();
         openLoadingModal();
         //$modalInstance.close();
+        //$modalInstance.dismiss();
     };
     
 
@@ -54,9 +57,7 @@ angular.module('wdyw')
       if($scope.newGoal.comment !== '') {
         valid = false;
       }
-      
-      console.log(valid);
-      
+            
       return valid;
     };
     
